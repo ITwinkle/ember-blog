@@ -1,0 +1,10 @@
+{{#if authService.isAuthenticated}}
+  <ul>
+    <li>{{#link-to 'index' class="active"}}Index{{/link-to}}</li>
+    <li>{{#link-to 'about'}}About{{/link-to}}</li>
+    <li{{action 'logout'}}><a href="#">Logout</a></li>
+  </ul>
+  {{outlet}}
+{{else}}
+  {{login-page}}
+{{/if}}

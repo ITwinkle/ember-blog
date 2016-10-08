@@ -1,0 +1,17 @@
+<div class="post">
+  {{#each flashMessages.queue as |flash|}}
+    {{flash-message flash=flash}}
+  {{/each}}
+  <button class="button-delete" {{action 'delete' on="click"}}>Delete{{fa-icon "remove"}}</button>
+  <button class="button-edit" {{action 'toggleModal' on="click"}}>Edit {{fa-icon "edit"}}</button>
+    <div>
+      <h2>{{#link-to 'post' post.id}}{{post.title}}{{/link-to}}</h2>
+    </div>
+    <div>
+      <h4>{{post.post}}</h4>
+    </div>
+      {{#if editPost}}
+        {{edit-post id=post.id editPost=editPost model=model toggleModal=(action 'toggleModal') }}
+      {{/if}}
+</div>
+<hr>

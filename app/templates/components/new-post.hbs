@@ -1,0 +1,20 @@
+<form {{action "addPost" on="submit"}}>
+    <div class="add-post">
+      <div class="group">
+        {{input type='text' value=title}}
+        <span class="bar"></span>
+        <label>Title</label>
+        {{#if validations.attrs.title.isDirty}}
+          <small class="help-block">{{validations.attrs.title.messages}}</small>
+        {{/if}}
+      </div>
+      <div class="group">
+        {{textarea value=post }}
+        <label>Post</label>
+        {{#if validations.attrs.post.isDirty}}
+          <small class="help-block">{{validations.attrs.post.messages}}</small>
+        {{/if}}
+        <button class="button-add" type='submit' >Add post</button>
+      </div>
+    </div>
+</form>

@@ -1,0 +1,22 @@
+{{#if editPost}}
+{{#modal-dialog close="toggleModal"
+            targetAttachment="center"
+            translucentOverlay=true
+            container-class="modal-change-post"}}
+    <form {{action "addPost" on="submit"}}>
+      <div class="change-post">
+        <div class="group">
+          {{input type='text' value=title}}
+          <span class="bar"></span>
+          <label>Title</label>
+        </div>
+        <div class="group">
+          {{textarea value=post }}
+          <label>Post</label>
+          <button class="button-change" type='submit' {{action 'editPost' on='click'}}>Change post</button>
+        </div>
+      </div>
+    </form>
+{{/modal-dialog}}
+{{/if}}
+{{yield}}

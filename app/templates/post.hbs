@@ -1,0 +1,16 @@
+  <div class="current-post">
+    <div>
+      <h2>{{model.title}}</h2>
+    </div>
+    <div>
+      {{model.post}}
+    </div>
+    <hr>
+    <h3>Comments</h3>
+    <br>
+    {{#each model.comments as |comment|}}
+      {{comment.text}}<br>
+    {{/each}}
+    <hr>
+    {{post-comment id=model.id}}
+  </div>
